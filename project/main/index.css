@@ -1,0 +1,652 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+}
+
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: rgb(74, 63, 48);
+}
+
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+
+
+
+.hero {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  position: relative;
+  padding-top: 150px;
+  text-align: center;
+  transition: background-image 1s ease-in-out;
+}
+
+.hero {
+  transition: background-image 1s ease-in-out;
+}
+
+#typingText {
+  color: #000000;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  padding-top: 5rem;
+}
+
+.hero-content p {
+  padding-top: 0.75rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.explore-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.explore-btn:hover {
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    border-color: white;
+  }
+
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .nav-links a {
+    color: #000000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero-content h1 {
+    padding-top: 9rem;
+  }
+}
+
+
+.places {
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.place-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 200px;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.place-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.place-name {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Backgrounds based on place */
+.taj-mahal {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg');
+}
+
+
+
+.india-gate {
+  background-image: url(https://s7ap1.scene7.com/is/image/incredibleindia/india-gate-delhi-1-attr-hero?qlt=82&ts=1727351922349);
+}
+
+.gateway-india {
+  background-image: url(https://saibabatravels.com/wp-content/uploads/2019/07/mumbai-gateway-of-india-150051333747-orijgp.jpg);
+}
+
+.hawa-mahal {
+  background-image: url(https://s7ap1.scene7.com/is/image/incredibleindia/hawa-mahal-jaipur-rajasthan-3-attr-about?qlt=82&ts=1726660216330);
+}
+
+.india-description {
+  padding: 3rem 2rem;
+  background-color: #fff8f0;
+  text-align: center;
+}
+
+.india-description .description-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.india-description h2 {
+  font-size: 2rem;
+  color: rgb(74, 63, 48);
+  margin-bottom: 1rem;
+}
+
+.india-description p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgb(74, 63, 48);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  .india-description h2 {
+    font-size: 1.5rem;
+  }
+
+  .india-description p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+
+.attractions-carousel {
+  background-color: white;
+  padding: 60px 20px;
+  text-align: center;
+  height: 100vh;
+}
+
+.attractions-carousel h2 {
+  font-size: 50px;
+  color: rgb(74, 63, 48);
+  margin-bottom: 30px;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel {
+  display: flex;
+  gap: 30px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.attraction-card {
+  flex: 0 0 auto;
+  width: 280px;
+  scroll-snap-align: start;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.attraction-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  color: white;
+  z-index: 1;
+}
+
+.attraction-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.attraction-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.discover-btn-wrap {
+  margin-top: 30px;
+}
+
+.discover-btn {
+  background-color: rgb(74, 63, 48);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.discover-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+  background-color: rgb(139, 124, 103);
+  ;
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .attractions-carousel h2 {
+    font-size: 36px;
+  }
+
+  .carousel {
+    gap: 20px;
+  }
+
+  .attraction-card {
+    width: 220px;
+  }
+
+  .attraction-card img {
+    height: 280px;
+  }
+
+  .overlay {
+    font-size: 15px;
+  }
+
+  .discover-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+/* 📱 Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+  .attractions-carousel {
+    height: 70vh;
+    width: 100%;
+    padding-left: 25px;
+  }
+
+  .attractions-carousel h2 {
+    font-size: 28px;
+  }
+
+  .carousel {
+    gap: 16px;
+  }
+
+  .attraction-card {
+    width: 340px;
+    height: 370px;
+  }
+
+  .attraction-card img {
+    height: 370px;
+  }
+
+  .overlay {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .discover-btn {
+    padding: 8px 16px;
+    font-size: 17px;
+  }
+}
+
+
+
+.tour-section {
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.tour-section h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color:rgb(74, 63, 48);
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.tour-card {
+  min-width: 300px;
+  margin: 0 10px;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.tour-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50% / 30%;
+}
+
+.duration {
+  color: rgb(74, 63, 48);
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.location {
+  color: rgb(74, 63, 48);
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.desc {
+  font-size: 14px;
+  color: #333;
+}
+
+.price {
+  font-size: 15px;
+  font-weight: bold;
+  color: red;
+  margin-top: 8px;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 10;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nav-left {
+  display: none;
+}
+
+.nav-right {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .carousel-track {
+    gap: 0; /* remove space between cards */
+  }
+
+  .tour-card {
+    min-width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+
+  .tour-card img {
+    height: 200px;
+    border-radius: 50% / 30%;
+  }
+
+  .tour-section h2 {
+    font-size: 26px;
+  }
+
+  .nav-right {
+    display: none;
+  }
+
+  .nav-left {
+    display: none;
+  }
+}
+
+
+
+.footer {
+    /* border: solid red; */
+    height: 60vh;
+    background-color: #fff8f0;
+    color: #fff;
+    padding: 5vh 2.5vw;
+}
+
+.footer-container {
+    /* border: solid purple; */
+    /* height: auto; */
+    margin-top: 4vh;
+    display: flex;
+    width: 1200px;
+}
+
+.footer-section {
+    /* text-align: center; */
+    /* border: solid green; */
+    flex: 1 1 200px;
+    margin: 10px;
+    padding: 2vh 2vw;
+}
+
+.footer-section h2 {
+    font-size: 2rem;
+    color:rgb(74, 63, 48);
+    margin-bottom: 2vh;
+}
+
+
+.footer-section p {
+    padding-top: 5vh;
+    color:rgb(74, 63, 48);
+    font-size: 1.2rem;
+}
+
+.footer-section h4 {
+     color:rgb(74, 63, 48);
+    font-size: 1.5rem;
+    margin-bottom: 2vh;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    /* color: #ccc; */
+       color:rgb(74, 63, 48);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+     color:rgb(0, 0, 0);
+}
+
+.footer-bottom {
+    /* border: solid brown; */
+    text-align: center;
+    padding: 2vh 2vw;
+    font-size: 12px;
+    /* color: #d2d2d2; */
+       color:rgb(74, 63, 48);
+    margin-top: 7vh;
+}
+
+
+/* ✅ Responsive styles for max-width 680px */
+@media (max-width: 680px) {
+    .footer {
+        /* border: solid red; */
+        height: auto;
+        padding: 0 3vw;
+    }
+
+    .footer-container {
+        /* border: solid green; */
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .footer-section {
+        /* border: solid gray; */
+        margin: 10px 0;
+        padding: 2vh 5vw;
+        text-align: center;
+    }
+
+    .footer h2 {
+        font-size: 3rem;
+    }
+
+    /* .highlight {
+        font-size: 8rem;
+    } */
+
+    .footer-section h4 {
+        font-size: 2rem;
+    }
+
+    .Resources {
+        display: none;
+    }
+
+    .footer-section p {
+        font-size: 1rem;
+    }
+
+    .footer-section ul li a {
+        font-size: 1rem;
+    }
+
+    .footer-bottom {
+        /* border: solid yellow; */
+        padding: 2vh 5vw;
+        margin-bottom: 1vh;
+    }
+
+    .footer-bottom p {
+        font-size: 1rem;
+        margin-bottom: 2vh;
+    }
+}

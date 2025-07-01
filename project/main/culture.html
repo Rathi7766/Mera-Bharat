@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mera Bharat - Culture</title>
+  <link rel="stylesheet" href="style.css" />
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+ background-color:  rgb(74, 63, 48);
+  backdrop-filter: blur(10px);
+  /* background-color: #000000; */
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color:  rgb(255, 244, 230);;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.95);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .nav-links a {
+    color: #000000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+main {
+ padding: 7rem 2rem;
+  background-color: rgb(255, 244, 230);
+}
+
+/* Layout styles */
+.culture-highlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+  /* background-color: #fff; */
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  /* box-shadow: 0 4px 12px rgba(0,0,0,0.1); */
+}
+
+.culture-highlight.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.culture-image {
+  flex: 1;
+  min-height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.culture-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+.culture-text {
+  flex: 1 1 45%;
+  max-width: 500px;
+}
+
+.culture-text h2 {
+  color: rgb(74, 63, 48);;
+  font-size: 1.8rem;
+}
+
+.culture-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: rgb(74, 63, 48);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* transition: background 0.3s; */
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);  
+  background-color: rgb(139, 124, 103);;
+}
+
+/* Alternate layout */
+.culture-highlight.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .culture-highlight {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .culture-highlight.reverse {
+    flex-direction: column;
+  }
+
+  .culture-image {
+    width: 100%;
+    height: 250px;
+  }
+
+  .culture-text {
+    width: 100%;
+  }
+}
+
+.footer {
+  background-color:rgb(74, 63, 48);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Small tablets and below (≤ 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    padding: 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.95);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    color: #000000;
+    padding: 0.5rem 0;
+  }
+
+  .culture-highlight {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .culture-highlight.reverse {
+    flex-direction: column;
+  }
+
+  .culture-image {
+    width: 100%;
+    height: 250px;
+  }
+
+  .culture-text {
+    width: 100%;
+  }
+
+  .culture-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .culture-text p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Extra small devices (≤ 480px) */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .menu-toggle {
+    font-size: 1.5rem;
+  }
+
+  .culture-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .culture-text p {
+    font-size: 0.9rem;
+  }
+
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  main {
+    padding: 6rem 1rem;
+  }
+
+  .culture-highlight {
+    padding: 1.5rem 0.5rem;
+  }
+}
+
+/* Large devices (≥ 1200px) */
+@media (min-width: 1200px) {
+  .culture-text {
+    max-width: 600px;
+  }
+
+  .culture-image {
+    min-height: 300px;
+  }
+}
+
+
+</style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Mera Bharat</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+
+  <main>
+    <!-- Traditional Dance -->
+    <section class="culture-highlight">
+      <div class="culture-image" style="background-image: url('https://www.drishtiias.com/images/uploads/1583477683_image1.jpg');"></div>
+      <div class="culture-text">
+        <h2>Traditional Dance</h2>
+        <p>India is home to diverse classical dance forms like Bharatanatyam, Kathak, Odissi, and Kuchipudi — each rooted in ancient traditions and storytelling.</p>
+        <a href="dance.html" class="cta-button">Explore Dance</a>
+
+      </div>
+    </section>
+
+    <!-- Festivals -->
+    <section class="culture-highlight reverse">
+      <div class="culture-image" style="background-image: url('https://appealingindia.com/wp-content/uploads/2018/08/festivals-of-india_g5wvt1_23081c30a.jpg');"></div>
+      <div class="culture-text">
+        <h2>Festivals of India</h2>
+        <p>From Diwali’s lights to Holi’s colors and Eid’s feasts, Indian festivals bring communities together with joy, rituals, and deep cultural roots.</p>
+        <a href="festivals.html" class="cta-button">Explore Festivals</a>
+      </div>
+    </section>
+
+    <!-- Cuisine -->
+    <section class="culture-highlight">
+      <div class="culture-image" style="background-image: url('https://restaurantindia.s3.ap-south-1.amazonaws.com/s3fs-public/2023-10/BeFunky-collage%20%2849%29_11zon.jpg');"></div>
+      <div class="culture-text">
+        <h2>Indian Cuisine</h2>
+        <p>The flavors of India vary by region — from spicy curries of the south to rich Punjabi dishes and the sweets of Bengal, food reflects its culture.</p>
+        <a href="cuisine.html" class="cta-button">Explore Cuisine</a>
+      </div>
+    </section>
+
+    <!-- Clothing -->
+    <section class="culture-highlight reverse">
+      <div class="culture-image" style="background-image: url('https://aektakapoor.files.wordpress.com/2006/12/9cf65ba00ae3424f40a76c8caa4dbda9.jpg ');"></div>
+      <div class="culture-text">
+        <h2>Traditional Clothing</h2>
+        <p>Sarees, turbans, dhotis, and sherwanis — Indian clothing blends heritage and identity, with each region showcasing its own styles and fabrics.</p>
+        <a href="clothing.html" class="cta-button">Explore Fashion</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Mera Bharat. All rights reserved.</p>
+  </footer>
+
+  <script>
+
+function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    // Fade-in animation on scroll
+    const sections = document.querySelectorAll('.culture-highlight');
+    const options = { threshold: 0.3 };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, options);
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+</body>
+</html>

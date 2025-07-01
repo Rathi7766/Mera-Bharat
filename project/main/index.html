@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>project</title>
+  <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+
+
+  <header class="navbar">
+    <div class="logo">Mera Bharat</div>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="culture.html">Culture</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+  </header>
+
+
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Welcome to <span id="place-name" class="typing-text">India</span></h1>
+      <p>Explore the beauty of <span id="state-name">Incredible India</span></p>
+      <a onclick="scrollToPlaces()" class="explore-btn">Explore More</a>
+    </div>
+  </section>
+
+
+  <section class="places">
+    <div class="place-card taj-mahal">
+      <div class="place-name">Taj Mahal</div>
+    </div>
+    <div class="place-card india-gate">
+      <div class="place-name">India Gate</div>
+    </div>
+    <div class="place-card hawa-mahal">
+      <div class="place-name">Hawa Mahal</div>
+    </div>
+    <div class="place-card gateway-india">
+      <div class="place-name">Gateway of India</div>
+    </div>
+  </section>
+
+  <!-- India Description Section -->
+  <section class="india-description ">
+    <div class="description-content">
+      <h2>Discover the Soul of India</h2>
+      <p>
+        India, a land of timeless traditions and vibrant diversity, offers a kaleidoscope of culture, heritage, and
+        breathtaking landscapes.
+      </p>
+      <p>
+        From the snow-capped Himalayas in the north to the serene backwaters of Kerala in the south, every corner tells
+        a story of pride and passion.
+      </p>
+      <p>
+        Wander through ancient temples, explore bustling markets, and savor a cuisine as diverse as its people.
+      </p>
+      <p>
+        India is more than a destination — it's an emotion that stays with you forever.
+      </p>
+    </div>
+  </section>
+
+  <section class="attractions-carousel">
+    <h2>Top Attractions</h2>
+    <div class="carousel-wrapper">
+      <div class="carousel" id="attractionCarousel">
+        <div class="attraction-card">
+          <img src="images/naida.jpg" alt="Naida Caves" />
+          <div class="overlay">
+            <h3>Naida Caves</h3>
+          </div>
+        </div>
+        <div class="attraction-card">
+          <img src="images/dwarka.jpeg" alt="Dwarkadhish Temple" />
+          <div class="overlay">
+            <h3>Dwarkadhish Temple</h3>
+          </div>
+        </div>
+        <div class="attraction-card">
+          <img src="images/sanchi.jpeg" alt="Sanchi Stupa" />
+          <div class="overlay">
+            <h3>Sanchi Stupa</h3>
+          </div>
+        </div>
+        <div class="attraction-card">
+          <img src="images/vivekanand.webp" alt="Swami Vivekananda Sarovar" />
+          <div class="overlay">
+            <h3>Swami Vivekananda Sarovar</h3>
+          </div>
+        </div>
+        <div class="attraction-card">
+          <img src="images/rock.jpg" alt="Rock Garden" />
+          <div class="overlay">
+            <h3>Rock Garden</h3>
+          </div>
+        </div>
+        <div class="attraction-card">
+          <img src="images/brahmasarovar.jpg" alt="Brahma Sarovar" />
+          <div class="overlay">
+            <h3>Brahma Sarovar</h3>
+          </div>
+        </div>
+        <div class="attraction-card">
+          <img src="images/harkipauri.jpg" alt="Har Ki Pauri" />
+          <div class="overlay">
+            <h3>Har Ki Pauri</h3>
+          </div>
+        </div>
+        <div class="attraction-card">
+          <img src="images/jagannath.jpg" alt="Shri Jagannath Temple" />
+          <div class="overlay">
+            <h3>Shri Jagannath Temple</h3>
+          </div>
+        </div>
+        <div class="attraction-card">
+          <img src="images/Charminar.webp" alt="Charminar" />
+          <div class="overlay">
+            <h3>Charminar</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="discover-btn-wrap">
+      <a href="discover.html" class="discover-btn">Discover more</a>
+    </div>
+  </section>
+
+  <section class="tour-section">
+    <h2>Explore Tour Packages</h2>
+
+    <div class="carousel-wrapper">
+      <button class="nav-btn nav-left" onclick="scrollCarousel(-1)">&#8249;</button>
+      <div class="carousel-track" id="carouselTrack">
+
+        <!-- Tour Cards -->
+        <div class="tour-card">
+          <img
+            src="https://www.onthegotours.com/repository/Sandy-beach-in-Goa--India-Tours--On-The-Go-Tours-346991495533921.jpg"
+            alt="Goa">
+          <div class="duration">2 Days</div>
+          <div class="location">Goa</div>
+          <div class="desc">Beaches, nightlife, and vibrant culture</div>
+          <div class="price">₹3,499</div>
+        </div>
+
+        <div class="tour-card">
+          <img src="https://static.toiimg.com/photo/115938932.cms"
+            alt="Manali">
+          <div class="duration">2 Days</div>
+          <div class="location">Manali</div>
+          <div class="desc">Snowy peaks and thrilling adventures</div>
+          <div class="price">₹4,299</div>
+        </div>
+
+        <div class="tour-card">
+          <img src="https://www.jaypeehotels.com/blog/wp-content/uploads/2024/12/image1-6.jpg" alt="Uttar Pradesh">
+          <div class="duration">2 Days</div>
+          <div class="location">Uttar Pradesh</div>
+          <div class="desc">Heritage sites and spiritual journeys</div>
+          <div class="price">₹2,999</div>
+        </div>
+
+        <div class="tour-card">
+          <img src="https://s7ap1.scene7.com/is/image/incredibleindia/1-bandra-worli-sea-ink-mumbai-maharashtra-attr-hero?qlt=82&ts=1727355264966" alt="Mumbai">
+          <div class="duration">2 Days</div>
+          <div class="location">Mumbai</div>
+          <div class="desc">City of dreams and Bollywood buzz</div>
+          <div class="price">₹3,999</div>
+        </div>
+
+        <div class="tour-card">
+          <img src="https://t.eucdn.in/tourism/lg/10-must-visit-temples-of-uttarakhand-9194616.webp" alt="Uttarakhand">
+          <div class="duration">2 Days</div>
+          <div class="location">Uttarakhand</div>
+          <div class="desc">Himalayan beauty and spiritual charm</div>
+          <div class="price">₹4,199</div>
+        </div>
+
+        <div class="tour-card">
+          <img src="https://ewsholidays.com/wp-content/uploads/2019/07/Sonamarg-Jammu-and-Kashmir-India21.jpg"
+            alt="Jammu Kashmir">
+          <div class="duration">2 Days</div>
+          <div class="location">Jammu & Kashmir</div>
+          <div class="desc">Paradise on Earth with scenic valleys</div>
+          <div class="price">₹4,999</div>
+        </div>
+
+        <div class="tour-card">
+          <img src="https://www.andbeyond.com/wp-content/uploads/sites/5/Jama-Masjid-Old-Delhi-City-Tours.jpg" alt="Delhi">
+          <div class="duration">2 Days</div>
+          <div class="location">Delhi</div>
+          <div class="desc">A blend of history, culture, and modern life</div>
+          <div class="price">₹3,199</div>
+        </div>
+
+        <div class="tour-card">
+          <img src="https://hikerwolf.com/wp-content/uploads/2020/09/bhagavathy_amman_temple1-600x400.jpg" alt="Kanyakumari">
+          <div class="duration">2 Days</div>
+          <div class="location">Kanyakumari</div>
+          <div class="desc">Sunrise point where seas meet</div>
+          <div class="price">₹3,599</div>
+        </div>
+
+        <div class="tour-card clone">
+          <img src="https://www.onthegotours.com/repository/Sandy-beach-in-Goa--India-Tours--On-The-Go-Tours-346991495533921.jpg"
+            alt="Goa">
+          <div class="duration">2 Days</div>
+          <div class="location">Goa</div>
+          <div class="desc">Beaches, nightlife, and vibrant culture</div>
+          <div class="price">₹3,499</div>
+        </div>
+
+        <div class="tour-card clone">
+          <img src="https://static.toiimg.com/photo/115938932.cms"
+            alt="Manali">
+          <div class="duration">2 Days</div>
+          <div class="location">Manali</div>
+          <div class="desc">Snowy peaks and thrilling adventures</div>
+          <div class="price">₹4,299</div>
+        </div>
+
+        <div class="tour-card clone">
+          <img src="https://www.jaypeehotels.com/blog/wp-content/uploads/2024/12/image1-6.jpg" alt="Uttar Pradesh">
+          <div class="duration">2 Days</div>
+          <div class="location">Uttar Pradesh</div>
+          <div class="desc">Heritage sites and spiritual journeys</div>
+          <div class="price">₹2,999</div>
+        </div>
+
+        <div class="tour-card clone">
+          <img src="https://s7ap1.scene7.com/is/image/incredibleindia/1-bandra-worli-sea-ink-mumbai-maharashtra-attr-hero?qlt=82&ts=1727355264966" alt="Mumbai">
+          <div class="duration">2 Days</div>
+          <div class="location">Mumbai</div>
+          <div class="desc">City of dreams and Bollywood buzz</div>
+          <div class="price">₹3,999</div>
+        </div>
+
+        <div class="tour-card clone">
+          <img src="https://t.eucdn.in/tourism/lg/10-must-visit-temples-of-uttarakhand-9194616.webp" alt="Uttarakhand">
+          <div class="duration">2 Days</div>
+          <div class="location">Uttarakhand</div>
+          <div class="desc">Himalayan beauty and spiritual charm</div>
+          <div class="price">₹4,199</div>
+        </div>
+
+        <div class="tour-card clone">
+          <img src="https://ewsholidays.com/wp-content/uploads/2019/07/Sonamarg-Jammu-and-Kashmir-India21.jpg"
+            alt="Jammu Kashmir">
+          <div class="duration">2 Days</div>
+          <div class="location">Jammu & Kashmir</div>
+          <div class="desc">Paradise on Earth with scenic valleys</div>
+          <div class="price">₹4,999</div>
+        </div>
+
+        <div class="tour-card clone">
+          <img src="https://www.andbeyond.com/wp-content/uploads/sites/5/Jama-Masjid-Old-Delhi-City-Tours.jpg" alt="Delhi">
+          <div class="duration">2 Days</div>
+          <div class="location">Delhi</div>
+          <div class="desc">A blend of history, culture, and modern life</div>
+          <div class="price">₹3,199</div>
+        </div>
+
+        <div class="tour-card clone">
+          <img src="https://hikerwolf.com/wp-content/uploads/2020/09/bhagavathy_amman_temple1-600x400.jpg" alt="Kanyakumari">
+          <div class="duration">2 Days</div>
+          <div class="location">Kanyakumari</div>
+          <div class="desc">Sunrise point where seas meet</div>
+          <div class="price">₹3,599</div>
+        </div>
+      </div>
+      <button class="nav-btn nav-right" onclick="scrollCarousel(1)">&#8250;</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h2>Mera Bharat</h2>
+        <p>Building Digital Products,<br>Brands & Experience.</p>
+      </div>
+      <div class="footer-section Resources">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Guides</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Customer Stories</a></li>
+          <li><a href="#">Glossary</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Partners</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Social Media</h4>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Mera Bharat. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <script src="index.js"></script>
+</body>
+
+</html>

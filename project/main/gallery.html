@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery - Mera Bharat</title>
+  <link rel="stylesheet" href="gallery.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+<style>
+  /* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff8f0;
+  color: #4a3f30;
+  line-height: 1.6;
+  overflow-x: hidden
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #4a3f30;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffe6cc;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 2.5rem;
+}
+
+/* Gallery Section */
+.gallery-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 4%;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.gallery-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.gallery-image {
+  flex: 1 1 45%;
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.gallery-image img:hover {
+  transform: scale(1.03);
+}
+
+.gallery-text {
+  flex: 1 1 45%;
+}
+
+.gallery-text h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.gallery-text p {
+  font-size: 1rem;
+  max-width: 90%;
+}
+
+/* Footer */
+.footer {
+  background-color: #4a3f30;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gallery-section,
+  .gallery-section.reverse {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.95);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .nav-links a {
+    color: black;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+</style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Mera Bharat</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="culture.html">Culture</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+  <main>
+    <h1>Gallery of Incredible India</h1>
+  
+    <!-- Section 1 -->
+    <section class="gallery-section" data-aos="fade-right">
+      <div class="gallery-image">
+        <img src="https://indotoursadventures.com/public/storage/blogs/d4cd91da972622aaadc74d6aad6bb615.jpg" alt="Taj Mahal">
+      </div>
+      <div class="gallery-text">
+        <h2>Taj Mahal, Agra</h2>
+        <p>The Taj Mahal, a symbol of eternal love, was built by Shah Jahan in memory of Mumtaz Mahal. Its white marble architecture is admired globally.</p>
+      </div>
+    </section>
+  
+    <!-- Section 2 -->
+    <section class="gallery-section reverse" data-aos="fade-left">
+      <div class="gallery-image">
+        <img src="https://karnatakatourism.org/wp-content/uploads/2020/05/Hampi.jpg" alt="Hampi">
+      </div>
+      <div class="gallery-text">
+        <h2>Hampi, Karnataka</h2>
+        <p>Hampi, the ruined city of the Vijayanagara Empire, is known for its giant boulders, ancient temples, and stunning stone chariots.</p>
+      </div>
+    </section>
+  
+    <!-- Section 3 -->
+    <section class="gallery-section" data-aos="fade-right">
+      <div class="gallery-image">
+        <img src="https://www.whyweseek.com/wp-content/uploads/2020/01/facebook-amritsar.jpg" alt="Golden Temple">
+      </div>
+      <div class="gallery-text">
+        <h2>Golden Temple, Amritsar</h2>
+        <p>The Golden Temple, or Harmandir Sahib, is a sacred Sikh shrine known for its golden architecture and serene lake, welcoming all religions.</p>
+      </div>
+    </section>
+  
+    <!-- Section 4 -->
+    <section class="gallery-section reverse" data-aos="fade-left">
+      <div class="gallery-image">
+        <img src="https://www.adventurenation.com/blog/wp-content/uploads/2016/04/Valley_of_flowers_National_Park_Uttrakhand_India..jpg" alt="Valley of Flowers">
+      </div>
+      <div class="gallery-text">
+        <h2>Valley of Flowers, Uttarakhand</h2>
+        <p>A UNESCO World Heritage Site, the Valley of Flowers is a vibrant alpine meadow full of rare Himalayan flora and breathtaking scenery.</p>
+      </div>
+    </section>
+  
+    <!-- Section 5 -->
+    <section class="gallery-section" data-aos="fade-right">
+      <div class="gallery-image">
+        <img src="https://i.insider.com/661fd28f49058e669356d622?width=700" alt="Munnar Hills">
+      </div>
+      <div class="gallery-text">
+        <h2>Munnar Hills, Kerala</h2>
+        <p>Munnar is a peaceful hill station surrounded by tea gardens, rolling hills, and misty landscapes, making it a haven for nature lovers.</p>
+      </div>
+    </section>
+  
+    <!-- Section 6 -->
+    <section class="gallery-section reverse" data-aos="fade-left">
+      <div class="gallery-image">
+        <img src="https://geographical.co.uk/wp-content/uploads/thar-desert_shutterstock_35026387.jpg" alt="Thar Desert">
+      </div>
+      <div class="gallery-text">
+        <h2>Thar Desert, Rajasthan</h2>
+        <p>The Thar Desert, also known as the Great Indian Desert, offers camel rides, folk music, and golden sand dunes under breathtaking sunsets.</p>
+      </div>
+    </section>
+  </main>
+  
+
+  <footer class="footer">
+    <p>&copy; 2025 Mera Bharat. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>

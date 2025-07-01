@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discover More - Top Attractions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            background-color: rgb(255, 245, 233)
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgb(74, 63, 48);
+            backdrop-filter: blur(10px);
+            /* background-color: #000000; */
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: rgb(255, 244, 230);
+            ;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.95);
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                padding: 1rem;
+                border-radius: 8px;
+            }
+
+            .nav-links a {
+                color: #000000;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+
+        .container {    
+            padding-top: 7rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #4a3f30;
+        }
+
+        .card {
+            height: 350px;
+            /* border: solid red; */
+            display: flex;
+            flex-wrap: wrap;
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            /* width: 100%; */
+            max-width: 400px;
+            height: auto;
+            object-fit: fill;
+            flex: 1 1 300px;
+        }
+
+        .card-body {
+            flex: 1 1 300px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-body h3 {
+            margin: 0 0 0.5rem;
+            color: #4a3f30;
+        }
+
+        .card-body p {
+            line-height: 1.5rem;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* Alternate layout for even-numbered cards */
+        .card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        @keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.card {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.card.show-left {
+    animation: slideInLeft 1s forwards;
+}
+
+.card.show-right {
+    animation: slideInRight 1s forwards;
+}
+
+
+        .footer {
+            background-color: #4a3f30;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .card{
+                margin-left: 20px;
+                width: 90%;
+                height: 450px;
+            }
+            .card img {
+                width: 150px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Mera Bharat</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <h2>Explore Cultural and Historical Landmarks</h2>
+
+        <div class="card">
+            <img src="images/Dudhsagar.avif" alt="Dudhsagar Waterfall">
+            <div class="card-body">
+                <h3>Dudhsagar Waterfall</h3>
+                <p>
+                    Dudhsagar Waterfall, translating to “Sea of Milk,” is a four-tiered marvel located on the Mandovi
+                    River in Goa. Surrounded by the lush Western Ghats, it cascades dramatically through dense forested
+                    slopes. It becomes a breathtaking spectacle during the monsoon, with milky white water crashing down
+                    from 310 meters.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/Nubra.webp" alt="Nubra Valley">
+            <div class="card-body">
+                <h3>Nubra Valley</h3>
+                <p>
+                    Situated in Ladakh, Nubra Valley is a high-altitude desert famous for its surreal landscapes, sand
+                    dunes, and double-humped Bactrian camels. The valley lies along the ancient Silk Route and is
+                    flanked by rugged mountains and the Shyok River. Monasteries like Diskit and the panoramic views
+                    from Khardung La add spiritual charm.
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/lotus.jpeg" alt="Lotus Temple">
+            <div class="card-body">
+                <h3>Lotus Temple</h3>
+                <p>
+                    The Lotus Temple in New Delhi is a Bahá’í House of Worship, renowned for its flower-like design with
+                    27 white marble petals. Opened in 1986, it welcomes people of all religions and encourages silent
+                    prayer and meditation. Its architecture symbolizes purity and peace.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/citypalace.jpg" alt="City Palace">
+            <div class="card-body">
+                <h3>City Palace</h3>
+                <p>
+                    Overlooking Lake Pichola in Udaipur, the City Palace is a fusion of Rajasthani and Mughal
+                    architectural styles. Built in 1559, it boasts grand courtyards, balconies, towers, and domes, each
+                    narrating stories of royal grandeur. The palace complex houses museums, temples, and royal
+                    residences.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/victoriamemorial.jpg" alt="Victoria Memorial">
+            <div class="card-body">
+                <h3>Victoria Memorial</h3>
+                <p>
+                    The Victoria Memorial in Kolkata is a magnificent white marble building dedicated to Queen Victoria,
+                    built between 1906 and 1921. It blends Indo-Saracenic architectural styles and houses a museum
+                    filled with colonial-era artifacts, paintings, and manuscripts.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/hanginggarden.jpeg" alt="Hanging Garden">
+            <div class="card-body">
+                <h3>Hanging Garden</h3>
+                <p>
+                    Located atop Malabar Hill in Mumbai, the Hanging Gardens offer a panoramic view of the Arabian Sea
+                    and Marine Drive. Known for their tiered flower beds and animal-shaped hedges, the gardens are a
+                    favorite picnic and jogging spot. Built in 1880 over a reservoir, they provide fresh air and a
+                    splash of greenery in the bustling city.
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/jallianwala.jpg" alt="Jallianwala Bagh">
+            <div class="card-body">
+                <h3>Jallianwala Bagh</h3>
+                <p>
+                    Jallianwala Bagh in Amritsar is a solemn memorial to the tragic massacre of April 13, 1919, where
+                    hundreds of unarmed Indians were killed by British troops. The park preserves bullet marks, a
+                    martyr’s well, and a memorial flame. It stands as a stark reminder of India’s struggle for
+                    independence.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/calangute.webp" alt="Calangute Beach">
+            <div class="card-body">
+                <h3>Calangute Beach</h3>
+                <p>
+                    Calangute Beach in North Goa is the most popular beach among domestic and international tourists.
+                    Lined with vibrant shacks, restaurants, and bars, it's famous for water sports like parasailing,
+                    banana boat rides, and jet skiing. The beach buzzes with music, food, and nightlife.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/jantarmantar.jpg" alt="Jantar Mantar">
+            <div class="card-body">
+                <h3>Jantar Mantar</h3>
+                <p>
+                    Jantar Mantar in Jaipur is a UNESCO World Heritage site with 19 astronomical instruments built by
+                    Maharaja Jai Singh II. Constructed in 1734, these structures measure time, predict eclipses, and
+                    observe stars with impressive accuracy. The largest sundial in the world, Samrat Yantra, is the
+                    highlight.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/dallake.jpg" alt="Dal Lake">
+            <div class="card-body">
+                <h3>Dal Lake</h3>
+                <p>
+                    Dal Lake in Srinagar is the heart of Kashmir's tourism, known for its shikara rides, houseboats, and
+                    floating vegetable markets. Set against the backdrop of snow-clad mountains, it reflects the
+                    changing colors of nature throughout the day. Mughal gardens and wooden bridges enhance its charm.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/ellora.jpg" alt="Ellora Caves">
+            <div class="card-body">
+                <h3>Ellora Caves</h3>
+                <p>
+                    The Ellora Caves near Aurangabad are a UNESCO World Heritage site representing ancient Indian
+                    rock-cut architecture. With 34 caves spanning Buddhist, Hindu, and Jain faiths, they reflect
+                    religious harmony. The Kailasa Temple, carved from a single rock, is a marvel of human effort and
+                    devotion.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/shaniwar.jpg" alt="Shaniwar Wada">
+            <div class="card-body">
+                <h3>Shaniwar Wada</h3>
+                <p>
+                    Built in 1732 in Pune, Shaniwar Wada was the royal seat of the Peshwas of the Maratha Empire. Though
+                    much of it was destroyed by a mysterious fire in 1828, the grand stone walls, Delhi Gate, and
+                    gardens remain intact.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/Statueofunity.webp" alt="Statue of Unity">
+            <div class="card-body">
+                <h3>Statue of Unity</h3>
+                <p>
+                    Located in Gujarat, the Statue of Unity honors Sardar Vallabhbhai Patel, India’s first Deputy Prime
+                    Minister. Standing at 182 meters, it is the tallest statue in the world and overlooks the Sardar
+                    Sarovar Dam. The complex features an exhibition hall, viewing gallery, and light shows.
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="footer">
+        &copy; 2025 Mera Bharat. All Rights Reserved.
+    </div>
+
+    <script>
+        function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("active");
+    }
+     const cards = document.querySelectorAll('.card');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Alternate slide direction
+                if (index % 2 === 0) {
+                    entry.target.classList.add('show-left');
+                } else {
+                    entry.target.classList.add('show-right');
+                }
+                observer.unobserve(entry.target); // Animate only once
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+    </script>
+
+</body>
+
+</html>

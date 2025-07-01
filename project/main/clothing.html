@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Traditional Clothing - Mera Bharat</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100%;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgb(74, 63, 48);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: rgb(255, 244, 230);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.95);
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        padding: 1rem;
+        border-radius: 8px;
+      }
+
+      .nav-links a {
+        color: #000000;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    main {
+      padding: 7rem 2rem 3rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #4a3f30;
+    }
+
+    .carousel-container {
+      position: relative;
+      padding: 2rem 0;
+      overflow: hidden;
+    }
+
+    .carousel {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 1rem;
+    }
+
+    .clothing-item {
+      min-width: 250px;
+      flex: 0 0 auto;
+      background-color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .clothing-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    .clothing-item img {
+      width: 350px;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .clothing-item h3 {
+      padding: 1rem;
+      font-size: 1.2rem;
+      color: #4a3f30;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      background-color: #4a3f30;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    .footer {
+      text-align: center;
+      background: #4a3f30;
+      color: white;
+      padding: 1rem 0;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Mera Bharat</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="culture.html">Culture</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Traditional Indian Clothing</h1>
+
+    <div class="carousel-container">
+      <div class="carousel" id="clothingCarousel">
+        <div class="clothing-item" onclick="showModal('Banarasi Saree', 'Banarasi sarees are known for their rich gold and silver brocade, fine silk and opulent embroidery. Originating from Varanasi.')">
+          <img src="https://images.cbazaar.com/images/dazzling-jacquard-zari-work-banarasi-silk-saree-sasrf27462-u.jpg" alt="Banarasi Saree">
+          <h3>Banarasi Saree</h3>
+
+        </div>
+      
+        <div class="clothing-item" onclick="showModal('Salwar Kameez', 'A classic North Indian outfit for women, usually accompanied by a dupatta.')">
+          <img src="https://www.soch.com/media/catalog/product/m/a/maroon_georgette_stone_embellished_salwar_kameez_with_dupatta_owa2cd2462c_01.jpg" alt="Salwar Kameez">
+          <h3>Salwar Kameez</h3>
+        </div>
+      
+        <div class="clothing-item" onclick="showModal('Lehenga Choli', 'Traditional wear consisting of a long embroidered skirt and a matching blouse.')">
+          <img src="https://empress-clothing.com/cdn/shop/files/TT150.jpg?v=1734520875" alt="Lehenga Choli">
+          <h3>Lehenga Choli</h3>
+        </div>
+      
+        <div class="clothing-item" onclick="showModal('Dhoti Kurta', 'Worn mainly by men in cultural events, the dhoti is a wrapped garment paired with a kurta.')">
+          <img src="https://www.pinkblueindia.com/wp-content/uploads/2024/11/golden-dhoti-kurta-set-in-silk-with-handwork-for-boys.jpg" alt="Dhoti Kurta">
+          <h3>Dhoti Kurta</h3>
+        </div>
+      
+        <div class="clothing-item" onclick="showModal('Kurta Pajama', 'Versatile male clothing worn for festivals, casual and formal occasions.')">
+          <img src="https://mahezon.in/cdn/shop/files/menstraditionalmaroonlucknowikurtapajama.png?v=1698407298" alt="Kurta Pajama">
+          <h3>Kurta Pajama</h3>
+        </div>
+      
+        <div class="clothing-item" onclick="showModal('Sherwani', 'An elegant, embroidered overcoat-like outfit worn by grooms during weddings.')">
+          <img src="https://maanraj.com/cdn/shop/files/UTHIK_SH_1255p.jpg?v=1726232470" alt="Sherwani">
+          <h3>Sherwani</h3>
+        </div>
+      </div>
+      
+      <button class="nav-btn prev" onclick="scrollCarousel(-1)">&#10094;</button>
+      <button class="nav-btn next" onclick="scrollCarousel(1)">&#10095;</button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Mera Bharat. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal for more info -->
+  <div id="infoModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("active");
+    }
+
+    function scrollCarousel(direction) {
+      const container = document.getElementById('clothingCarousel');
+      const scrollAmount = 300;
+      container.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+    }
+
+    function showModal(title, description) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalDescription').innerText = description;
+      document.getElementById('infoModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('infoModal').style.display = 'none';
+    }
+
+    // Optional: close modal when clicking outside
+    window.onclick = function(e) {
+      if (e.target === document.getElementById('infoModal')) {
+        closeModal();
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Mera Bharat</title>
+  <style>
+    /* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, rgb(255, 140, 0),white, rgb(3, 181, 3));
+  backdrop-filter: blur(10px);
+  /* background-color: #000000; */
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #000000;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+
+/* About Section */
+.about-section {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+}
+
+.about-container {
+  display: flex;
+  padding-top: 2rem;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  flex: 1 1 300px;
+  min-height: 450px;
+  background: url(https://thumbs.dreamstime.com/b/illustration-tricolor-indian-flag-map-background-republic-independence-day-india-tricolor-indian-flag-map-background-106497148.jpg) no-repeat center center/cover;
+  border-radius: 10px;
+}
+
+.about-text {
+  flex: 1 1 300px;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Animations */
+.fade-in,
+.slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.fade-in.visible,
+.slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in.delay-1 {
+  transition-delay: 0.5s;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .about-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .about-hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.95);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .nav-links a {
+    color: #000000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-image {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .about-hero-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .about-hero-content p {
+    font-size: 1rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Mera Bharat</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+
+
+  <section class="about-section">
+    <div class="about-container slide-up">
+      <div class="about-image"></div>
+      <div class="about-text">
+        <h2>Our Vision</h2>
+        <p>
+          Mera Bharat is a digital tribute to India’s unity in diversity. From the Himalayas in the north to the oceans in the south, 
+          we aim to bring the soul of India closer to you — through travel, stories, and stunning visuals.
+        </p>
+        <p>
+          Every corner of India has a story — a legacy of heritage, culture, and celebration. We strive to showcase this rich mosaic through curated visuals, 
+          regional highlights, and authentic voices from every state.
+        </p>
+        <p>
+          Whether it's the serene backwaters of Kerala, the deserts of Rajasthan, the vibrant festivals of Punjab, or the tranquil tea gardens of Assam — 
+          our platform connects you to the experiences that define Bharat.
+        </p>
+        <p>
+          Mera Bharat is more than a journey — it's a celebration of identity, history, and belonging. Join us in discovering India like never before.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    window.addEventListener("load", () => {
+      document.querySelectorAll(".fade-in, .slide-up").forEach(el => {
+        el.classList.add("visible");
+      });
+    });
+  </script>
+</body>
+</html>
